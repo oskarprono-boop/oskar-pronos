@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10"><meta name="description" content="OSKAR PRONOS — analyses et statistiques football">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<title>OSKAR PRONOS</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="brandmark">OA</div><div><b>OSKAR <span>ANALYSE</span></b><small>FOOTBALL PREDICTION & ANALYTICS</small></div></div>
+  <button class="iconbtn" id="settingsBtn" aria-label="Paramètres">⚙</button>
+</header>
+<main>
+<section class="hero">
+  <div class="eyebrow">CENTRE DE PRONOSTICS FOOTBALL</div>
+  <h1>Analyser mieux.<br><em>Pronostiquer avec méthode.</em></h1>
+  <p>Statistiques, forme récente et probabilités pour étudier chaque rencontre.</p>
+  <div class="herofoot"><span class="live-dot"></span> <span id="connection">MODE DÉMO — configurez votre API</span></div>
+</section>
+<nav class="tabs">
+ <button class="tab active" data-tab="today">Aujourd'hui</button><button class="tab" data-tab="live">En direct</button><button class="tab" data-tab="saved">Favoris</button>
+</nav>
+<section class="toolbar">
+ <div><label for="date">DATE DES MATCHS</label><input type="date" id="date"></div>
+ <div><label for="leagueFilter">COMPÉTITION</label><select id="leagueFilter"><option value="">Toutes</option></select></div>
+ <button id="refreshBtn" class="refresh">↻</button>
+</section>
+<div class="summary" id="summary"><div><b id="matchCount">0</b><small>RENCONTRES</small></div><div><b id="liveCount">0</b><small>EN DIRECT</small></div><div><b id="finishedCount">0</b><small>TERMINÉS</small></div></div>
+<section id="matchList" class="matchlist"><div class="empty"><div class="ball">⚽</div><h3>Votre tableau de matchs</h3><p>Configurez votre clé API pour charger les rencontres réelles du jour. Vous pouvez aussi explorer la démonstration.</p><button class="primary" id="demoBtn">Explorer la démonstration</button></div></section>
+<section class="disclaimer">Les probabilités sont des estimations statistiques, pas des certitudes. Aucun pronostic ne garantit un résultat.</section>
+</main>
+<footer><b>OSKAR PRONOS</b><span>BY OSKAR DJ</span><small>Pronostics responsables • Football uniquement</small></footer>
+<dialog id="settings">
+ <form method="dialog" class="modalhead"><div><div class="eyebrow">CONFIGURATION</div><h2>Paramètres de l'application</h2></div><button class="iconbtn" aria-label="Fermer">✕</button></form>
+ <div class="field"><label>FOURNISSEUR DE DONNÉES</label><select id="provider"><option value="api-football">API-Football (API-Sports)</option></select></div>
+ <div class="field"><label>CLÉ API PERSONNELLE</label><input id="apiKey" type="password" placeholder="Collez votre clé API ici" autocomplete="off"></div>
+ <p class="hint">Obtenez une clé sur <a href="https://www.api-football.com/" target="_blank" rel="noopener">api-football.com</a>. La clé est conservée uniquement dans le stockage local de cet appareil. Ne la partagez pas.</p>
+ <div class="field"><label>FUSEAU HORAIRE</label><select id="timezone"><option value="Africa/Douala">Africa/Douala (Cameroun)</option><option value="Europe/Paris">Europe/Paris</option><option value="UTC">UTC</option></select></div>
+ <div class="actions"><button type="button" class="secondary" id="clearKey">Effacer la clé</button><button type="button" class="primary" id="saveSettings">Enregistrer</button></div>
+</dialog>
+<dialog id="analysis">
+ <div class="modalhead"><div><div class="eyebrow">FICHE RENCONTRE</div><h2 id="analysisTitle">Analyse avancée du match</h2></div><button class="iconbtn" id="closeAnalysis">✕</button></div>
+ <div id="analysisBody"></div>
+ <p class="hint">Cette fiche présente les données disponibles chez le fournisseur. Les estimations ne constituent pas une garantie.</p>
+</dialog>
+<script src="app.js"></script>
+</body></html>

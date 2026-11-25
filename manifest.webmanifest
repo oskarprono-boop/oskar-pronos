@@ -1,0 +1,17 @@
+{
+  "name": "OSKAR PRONOS",
+  "short_name": "OSKAR PRONOS",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0d10",
+  "theme_color": "#12395c",
+  "description": "Analyses avancées et pronostics football par OSKAR DJ",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
