@@ -9,7 +9,7 @@ const demo=[
 ];
 function key(){return localStorage.getItem('oa_api_key')||''}
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function statusText(s){return ({NS:'À VENIR',1H:'1ÈRE MI-TEMPS',HT:'MI-TEMPS',2H:'2ÈME MI-TEMPS',FT:'TERMINÉ',AET:'APRÈS PROLONGATION',PEN:'TIRS AU BUT',PST:'REPORTÉ',CANC:'ANNULÉ',LIVE:'EN DIRECT',ET:'PROLONGATION',BT:'PAUSE'}[s]||s||'À VENIR')}
+function statusText(s){return ({NS:'À VENIR','1H':'1ÈRE MI-TEMPS',HT:'MI-TEMPS','2H':'2ÈME MI-TEMPS',FT:'TERMINÉ',AET:'APRÈS PROLONGATION',PEN:'TIRS AU BUT',PST:'REPORTÉ',CANC:'ANNULÉ',LIVE:'EN DIRECT',ET:'PROLONGATION',BT:'PAUSE'}[s]||s||'À VENIR')}
 function time(m){return new Intl.DateTimeFormat('fr-FR',{hour:'2-digit',minute:'2-digit',timeZone:$('#timezone').value}).format(new Date(m.fixture.date))}
 function render(){
  const q=$('#leagueFilter').value;
